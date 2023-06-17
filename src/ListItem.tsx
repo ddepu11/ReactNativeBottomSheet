@@ -38,7 +38,8 @@ const ListItem: FC<Props> = ({ amenity, isSelected = false, reset }) => {
         padding: 8,
         width: 100,
         borderWidth: 0.7,
-        marginBottom: 20,
+        marginBottom: 22,
+        marginRight: 15,
         borderColor: isSelected ? "white" : "black",
         backgroundColor: isSelected ? "#666" : "whitesmoke",
       }}
