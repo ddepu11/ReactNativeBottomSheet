@@ -11,7 +11,7 @@ export default function App() {
     <SafeAreaView style={styles.container}>
       <StatusBar style="light" backgroundColor="#333" />
       <TamaguiProvider config={config}>
-        <View flex={1} backgroundColor={"blueviolet"}>
+        <View flex={1} backgroundColor={"black"}>
           <Form />
         </View>
       </TamaguiProvider>

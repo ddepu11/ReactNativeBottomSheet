@@ -1,20 +1,38 @@
-import React, { FC } from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import React, { FC } from "react";
+import { useForm } from "react-hook-form";
+import { Text, View } from "tamagui";
+import { z } from "zod";
 
-const Form:FC = () => {
-  return (
-    <View>
-        <Text>List In Form</Text>
-    </View>
-  )
-}
+import { zodResolver } from "@hookform/resolvers/zod";
+import List from "./List";
 
+const formZodSchema = z.object({
+  amenities: z.string().array(),
+});
+export type FiltersValidationSchemaType = z.infer<typeof formZodSchema>;
 
-const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: '#fff',
+const Form: FC = () => {
+  const { control, setValue, reset } = useForm<FiltersValidationSchemaType>({
+    defaultValues: {
+      amenities: [],
     },
+    resolver: zodResolver(formZodSchema),
   });
 
-export default Form
+  return (
+    <View flex={1}>
+      <Text
+        color="white"
+        textAlign="center"
+        fontFamily={"Roboto"}
+        fontSize={34}
+      >
+        List In Form
+      </Text>
+
+      <List control={control} reset={reset} />
+    </View>
+  );
+};
+
+export default Form;
