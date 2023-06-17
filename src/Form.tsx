@@ -22,10 +22,12 @@ const Form: FC = () => {
   return (
     <View flex={1}>
       <Text
-        color="white"
+        marginTop={5}
+        color="black"
         textAlign="center"
         fontFamily={"Roboto"}
-        fontSize={34}
+        fontStyle="italic"
+        fontSize={20}
       >
         List In Form
       </Text>

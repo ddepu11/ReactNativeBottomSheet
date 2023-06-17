@@ -8,7 +8,7 @@ import {
 } from "react-hook-form";
 import ListItem from "./ListItem";
 import { View } from "tamagui";
-import { FlatList } from "react-native";
+import { FlatList } from "react-native-gesture-handler";
 
 type Props = {
   control: Control<
@@ -43,7 +43,7 @@ const List: FC<Props> = ({ control, reset }) => {
   const KeyExtractor = useCallback(({ id }: { id: string }) => id, []);
 
   return (
-    <View flex={1} marginTop={20}>
+    <View flex={1} marginTop={15} alignItems="center">
       <FlatList
         data={amenities}
         extraData={selectedAmenities}
@@ -51,6 +51,7 @@ const List: FC<Props> = ({ control, reset }) => {
         renderItem={RenderItem}
         keyExtractor={KeyExtractor}
         removeClippedSubviews
+        showsVerticalScrollIndicator={false}
       />
     </View>
   );

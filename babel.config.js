@@ -1,13 +1,23 @@
-process.env.TAMAGUI_TARGET = 'native'
+process.env.TAMAGUI_TARGET = "native";
 
-module.exports = function(api) {
+module.exports = function (api) {
   api.cache(true);
   return {
-    presets: ['babel-preset-expo'],
+    presets: ["babel-preset-expo"],
+
     plugins: [
-      ['transform-inline-environment-variables', {
-        include: ['TAMAGUI_TARGET']
-      }]
-    ]
+      [
+        "transform-inline-environment-variables",
+        {
+          include: ["TAMAGUI_TARGET"],
+        },
+      ],
+      [
+        "react-native-reanimated/plugin",
+        {
+          relativeSourceLocation: true,
+        },
+      ],
+    ],
   };
 };

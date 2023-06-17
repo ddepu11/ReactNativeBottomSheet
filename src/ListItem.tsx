@@ -29,7 +29,7 @@ const ListItem: FC<Props> = ({ amenity, isSelected = false, reset }) => {
     });
   }, []);
 
-  console.log("Render: ", amenity);
+  // console.log("Render: ", amenity);
 
   return (
     <Pressable
@@ -37,11 +37,11 @@ const ListItem: FC<Props> = ({ amenity, isSelected = false, reset }) => {
         borderRadius: 15,
         padding: 8,
         width: 100,
-        borderWidth: 0.7,
+        borderWidth: 1,
         marginBottom: 22,
         marginRight: 15,
-        borderColor: isSelected ? "white" : "black",
-        backgroundColor: isSelected ? "#666" : "whitesmoke",
+        borderColor: isSelected ? "#F8E8EE" : "black",
+        backgroundColor: isSelected ? "#526D82" : "#FFF4F4",
       }}
       onPress={handlePress}
     >
