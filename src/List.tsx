@@ -50,7 +50,7 @@ const List: FC<Props> = ({ control, reset }) => {
         numColumns={3}
         renderItem={RenderItem}
         keyExtractor={KeyExtractor}
-        // estimatedItemSize={67}
+        removeClippedSubviews
       />
     </View>
   );
